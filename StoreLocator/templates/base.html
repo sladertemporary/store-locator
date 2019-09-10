@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head>
+{% block head %}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<title>{% block title %}{% endblock %} - Store Locator</title>
+{% endblock %}
+
+		</head>
+		<body>
+			<div class="container">
+				<br>
+				<img height=100 style="position:absolute;right:20px;" class="rounded float-right" src="{{ url_for('static', filename='fav.gif') }}"></img>
+					<a href="/">
+						<h1 class="text-center text-dark">Store Locator</h1>
+					</a>
+					<form action="search" method="post">
+						<br>
+							<div class="row">
+								<div class="col-sm-2">
+								</div>
+								<div class="col">
+									<div class="form-group ">
+										<input type="text" class="form-control" name="postcode"
+                                         {% if postcode %}
+                                         value="{{ postcode }}"
+                                         {% endif %}
+                                               placeholder="Postcode (UK only)">
+										</div>
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" name="radius"
+                                         {% if postcode %}
+                                         value="{{ radius }}"
+                                         {% endif %}
+                                               placeholder="Radius (km)">
+										</div>
+										<div class="col">
+											<button id="searchbtn" type="submit" value="Submit" class="btn btn-success">Search</button>
+										</div>
+									</div>
+						<div class="col-sm-2">
+						</div>
+								</form>
+								<div id="content">{% block content %}{% endblock %}</div>
+								<hr>
+								<div id="footer" class="text-center">Made by Sam Lader 🏃‍
+                                </div>
+								<br>
+							</div>
+						</body>
+					</html>
