@@ -5,6 +5,8 @@ This application displays a directory of stores loaded from a JSON file. The app
 
 Built using Flask.
 
+*Post interview assignment
+
 ## Installation
 
 To install and run the application, while in the top level directory (not the `store-finder` package), run the following commands in your terminal:
